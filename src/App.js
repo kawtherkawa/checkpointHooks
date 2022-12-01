@@ -1,26 +1,23 @@
-
 import './App.css';
-import MovieList from './Components/MovieList/MovieList';
-import {useState} from 'react';
-import {moviesData} from './Components/Data/Data'
-import AddMovie from './Components/AddMovie/AddMovie';
-import Filtermovies from './Components/FilterMovie/Filtermovies';
-import ReactStars from "react-rating-stars-component";
+import { Route, Routes } from 'react-router-dom';
+import Home from './Home';
+import Erreur from './Erreur';
+import NavBars from './Components/NavBars';
+
 function App() {
 
-const[movies,setMovies]=useState(moviesData)
-const add=(newmovie)=>{
-  setMovies([...movies,newmovie])
-}
-const[inputSearch,setInputsearch]=useState("")
+
 //const [show, setShow] = useState(false);
   return (
     <div className="App">
       
-      <Filtermovies inputSearch={inputSearch} setInputsearch={setInputsearch}/>
-      <ReactStars />
-      <MovieList movies={movies} inputSearch={inputSearch}/>
-      <AddMovie add={add}/>
+     
+
+<NavBars/>
+      <Routes>
+        <Route exact path='/' element={<Home/>} />
+        <Route exact path='*' element={<Erreur/>} />
+      </Routes>
     </div>
   );
 }

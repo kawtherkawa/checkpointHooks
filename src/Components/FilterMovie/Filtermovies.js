@@ -1,6 +1,7 @@
 import React from 'react'
-import { Form } from 'react-bootstrap'
+import {  Col, Form } from 'react-bootstrap'
 
+import Row from 'react-bootstrap/Row';
 const Filtermovies = ({inputSearch,setInputsearch}) => {
 
  //const handleInputSearch=(e) => {//donne l'élément qui a déclenché l'événement.
@@ -8,7 +9,16 @@ const Filtermovies = ({inputSearch,setInputsearch}) => {
   //}
   return (
     <div>
-      <Form.Control type="url" placeholder="Enter your movie title " onChange={(e)=>setInputsearch(e.target.value)} value={inputSearch}/>
+       <Form>
+          <Form.Group as={Row} className="mb-3" controlId="formPlaintextPassword">
+          <Form.Label column sm="2">
+          
+        </Form.Label>
+        <Col sm="10">
+          <Form.Control type="password" placeholder="Enter your movie title " onChange={(e)=>setInputsearch(e.target.value)} value={inputSearch}/>
+        </Col>
+      </Form.Group>
+    </Form>
     </div>
   )
 }

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card } from 'react-bootstrap'
+import { Button, Card } from 'react-bootstrap'
 import ReactStars from "react-rating-stars-component";
 
 const MovieCard = ({ movie }) => {
@@ -24,7 +24,7 @@ const MovieCard = ({ movie }) => {
           <Card.Text>
             {movie.Type}
           </Card.Text>
-
+<a href={movie.trailer} target='blank'><Button varient='primery' >Trailer  </Button></a>
           <ReactStars {...firstExample} />
         </Card.Body>
       </Card>
